@@ -440,8 +440,10 @@ public class CacheLRUTest {
 ✅ Uma análise eficaz combina **monitoramento constante**, **profiling dirigido por métricas** e **refinamento iterativo**.
 
 
-✅ Atividades SQL
+### 🚀 ✅ Atividades SQL
+
 Desafios práticos envolvendo comandos SQL como SELECT, WHERE, JOIN, entre outros.
 
 📂 Acesse a pasta com as atividades:
+
 🔗 AtividadesSql
