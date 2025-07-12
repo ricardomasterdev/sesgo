@@ -247,7 +247,6 @@ Desenhe um diagrama de classes para este sistema e explique como as classes inte
 
 http://app2.cdxsistemas.com.br/Diagrama_UML_Biblioteca.png
 
-
 🧱 Classes Principais
 
 Classe	Atributos principais	Relacionamentos
