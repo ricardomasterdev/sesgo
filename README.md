@@ -222,3 +222,49 @@ spring.jpa.show-sql=true
   "email": "joao@email.com"
 }
 ```
+
+
+
+## ✅ Parte 3   - Análise e Design
+
+## ✅ Questão 1: Projeto de Sistema (Gestão de Biblioteca)
+📋 Enunciado Resumido
+Você está projetando um sistema de gestão de biblioteca.
+O sistema deve permitir:
+
+Cadastro de livros
+
+Cadastro de autores
+
+Cadastro de leitores
+
+Controle de empréstimo e devolução de livros
+
+Desenhe um diagrama de classes para este sistema e explique como as classes interagem entre si.
+
+🖼️ Diagrama UML
+🔗 Visualize o diagrama de classes completo aqui:
+
+http://app2.cdxsistemas.com.br/Diagrama_UML_Biblioteca.png
+
+
+🧱 Classes Principais
+
+Classe	Atributos principais	Relacionamentos
+
+Livro	id, titulo, isbn, anoPublicacao	1 autor (Autor), N empréstimos (Emprestimo)
+Autor	id, nome, nacionalidade	1 autor → N livros (Livro)
+Leitor	id, nome, cpf, email	N empréstimos (Emprestimo)
+Emprestimo	id, dataEmprestimo, dataDevolucao	1 livro (Livro), 1 leitor (Leitor)
+
+🔄 Interações Entre as Classes
+
+Um autor pode escrever vários livros
+
+Um livro pertence a apenas um autor
+
+Um leitor pode realizar vários empréstimos
+
+Cada empréstimo vincula um livro a um leitor, com controle de datas
+
+O sistema registra histórico de empréstimos, garantindo que um livro só seja emprestado uma vez por vez
