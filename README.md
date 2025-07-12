@@ -55,7 +55,7 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 
 ---
 
-✅ Questão 2 — Manipulação de Arquivos
+## ✅ Questão 2 — Manipulação de Arquivos
 📋 Enunciado Resumido
 Ler um arquivo texto chamado input.txt, remover todas as linhas em branco,
 e gravar o conteúdo restante em um novo arquivo chamado output.txt.
@@ -85,7 +85,7 @@ O processo é feito utilizando Streams, Files.readAllLines() e Files.write() da 
 
 
 
-✅ Questão 3 — Multithreading: Simulação Bancária
+## ✅ Questão 3 — Multithreading: Simulação Bancária
 📋 Enunciado Resumido
 Implemente um programa que simule um banco com múltiplas contas e suporte
 transferências simultâneas entre contas. O sistema deve lidar corretamente com concorrência,
@@ -127,7 +127,7 @@ Exemplo de saída esperada:
 ✅ Saldo final Conta 2: 1000.00
 
 
-✅ Questão 4 — API REST com Spring Boot + Oracle + Swagger
+## ✅ Questão 4 — API REST com Spring Boot + Oracle + Swagger
 📋 Enunciado Resumido
 Desenvolver uma API RESTful utilizando Spring Boot que permita o gerenciamento de usuários com os seguintes endpoints:
 
