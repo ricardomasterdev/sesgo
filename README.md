@@ -55,4 +55,31 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 
 ---
 
-## 📌 Próximos Exercícios
+✅ Questão 2 — Manipulação de Arquivos
+📋 Enunciado Resumido
+Ler um arquivo texto chamado input.txt, remover todas as linhas em branco,
+e gravar o conteúdo restante em um novo arquivo chamado output.txt.
+
+🗂️ Estrutura de Pastas
+Caminho	Descrição
+src/main/java/com/ricardomasterdev/arquivos/RemoverLinhasEmBranco.java	Classe principal que executa a leitura, filtragem e escrita dos arquivos
+src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java	Classe auxiliar para execução manual do processamento
+
+▶️ Como Executar o Exercício
+Crie um arquivo chamado input.txt na raiz do projeto (mesmo nível do pom.xml)
+
+Insira conteúdo de teste com algumas linhas em branco, por exemplo:
+Linha 1
+
+Linha 2
+
+Linha 3
+
+Abra e execute a classe:
+
+src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java
+O programa irá gerar um novo arquivo output.txt na mesma pasta, contendo apenas as linhas com texto.
+
+✅ Todas as linhas em branco ou com espaços em branco são removidas automaticamente.
+O processo é feito utilizando Streams, Files.readAllLines() e Files.write() da biblioteca java.nio.file.
+
