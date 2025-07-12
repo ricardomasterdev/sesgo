@@ -1,3 +1,4 @@
+
 # 💻 Projeto Java Algoritmos — SES
 
 Repositório público para estudo e implementação de exercícios de algoritmos em **Java** com uso de **JUnit**, **Spring Boot** e conceitos modernos de estruturação de código.
@@ -40,10 +41,8 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 
 1. Abra o projeto no **IntelliJ IDEA 2022.2.5**
 2. Verifique se o SDK está definido como **Java 1.8**
-3. Abra o arquivo de teste:
-   `src/test/java/com/ricardomasterdev/cache/CacheLRUTest.java`
-4. Clique com o botão direito na classe e selecione:
-   `Run 'CacheLRUTest'`
+3. Abra o arquivo de teste: `src/test/java/com/ricardomasterdev/cache/CacheLRUTest.java`
+4. Clique com o botão direito na classe e selecione: `Run 'CacheLRUTest'`
 5. Os testes JUnit serão executados e os resultados aparecerão no painel inferior do IntelliJ.
 
 ✅ Todos os testes devem passar, validando os métodos:
@@ -86,8 +85,7 @@ Linha 2
 Linha 3
 ```
 
-3. Execute a classe:
-   `src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java`
+3. Execute a classe: `src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java`
 
 ✅ O programa irá gerar um novo arquivo `output.txt` na mesma pasta, contendo apenas as linhas com texto.  
 ✅ Todas as linhas em branco ou com espaços em branco são removidas automaticamente.  
@@ -116,42 +114,11 @@ Linha 3
 
 ---
 
-### ▶️ Como Executar o Exercício
-
-1. Abra o projeto no IntelliJ IDEA 2022.2.5
-2. Verifique se o SDK está definido como **OpenJDK 24** ou compatível com Java 8+
-3. Execute a classe:
-   `src/main/test/java/com/ricardomasterdev/banco/TestBanco.java`
-
-✅ A simulação irá executar 100 transferências concorrentes de ida e volta entre duas contas bancárias.  
-✅ O sistema utiliza `ExecutorService` e `synchronized` para garantir integridade dos saldos.
-
----
-
-### 🧪 Funcionamento Esperado
-
-- As contas começam com saldo igual (`1000.00` cada)
-- O programa executa transferências concorrentes entre elas
-- Ao final, os saldos devem permanecer consistentes (`1000.00` cada), provando que não houve condição de corrida
-
-Exemplo de saída esperada:
-
-```
-✔ Transferido 10.00 de Conta 1 para Conta 2  
-✔ Transferido 10.00 de Conta 2 para Conta 1  
-...  
-✅ Saldo final Conta 1: 1000.00  
-✅ Saldo final Conta 2: 1000.00
-```
-
----
-
 ## ✅ Questão 4 — API REST com Spring Boot + Oracle + Swagger
 
 ### 📋 Enunciado Resumido
 
 > Desenvolver uma API RESTful utilizando Spring Boot que permita o gerenciamento de usuários com os seguintes endpoints:
->
 > - Criar um novo usuário (`POST /users`)
 > - Listar todos os usuários (`GET /users`)
 > - Buscar um usuário por ID (`GET /users/{id}`)
@@ -162,12 +129,8 @@ Exemplo de saída esperada:
 
 ### 🌐 Publicação
 
-A API foi publicada no seguinte endereço:
-
 - **API Endpoint:** [`http://app2.cdxsistemas.com.br:1111/users`](http://app2.cdxsistemas.com.br:1111/users)
 - **Swagger UI:** [`http://app2.cdxsistemas.com.br:1111/swagger-ui/index.html`](http://app2.cdxsistemas.com.br:1111/swagger-ui/index.html)
-
-Através da interface Swagger, é possível testar todos os endpoints diretamente pelo navegador.
 
 ---
 
@@ -185,8 +148,6 @@ Através da interface Swagger, é possível testar todos os endpoints diretament
 
 ### ⚙️ Banco de Dados Utilizado
 
-A aplicação utiliza um banco **Oracle** remoto com as seguintes configurações:
-
 ```properties
 spring.datasource.url=jdbc:oracle:thin:@//177.53.148.181:1522/XEPDB1
 spring.datasource.username=codex
@@ -198,72 +159,40 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
-✅ Essas credenciais permitem validar a efetividade da API, incluindo persistência e consulta no banco Oracle real.
+---
+
+## ✅ Parte 3 – Análise e Design
+
+### ✅ Questão 1: Projeto de Sistema (Gestão de Biblioteca)
+
+📋 Enunciado Resumido:  
+Desenvolva o projeto de um sistema para gerenciamento de biblioteca, contendo:
+
+- Cadastro de livros
+- Cadastro de autores
+- Cadastro de leitores
+- Controle de empréstimo e devolução de livros
+
+🖼️ Diagrama UML:  
+[Visualizar diagrama completo](http://app2.cdxsistemas.com.br/Diagrama_UML_Biblioteca.png)
 
 ---
 
-### 📌 Exemplo de uso via Swagger
+### 🧱 Classes Principais
 
-- **Criar um usuário:**
+| Classe       | Atributos Principais                 | Relacionamentos                              |
+|--------------|--------------------------------------|----------------------------------------------|
+| `Livro`      | `id`, `titulo`, `isbn`, `anoPublicacao` | 1 autor (`Autor`), N empréstimos (`Emprestimo`) |
+| `Autor`      | `id`, `nome`, `nacionalidade`        | 1 autor → N livros (`Livro`)                 |
+| `Leitor`     | `id`, `nome`, `cpf`, `email`         | N empréstimos (`Emprestimo`)                 |
+| `Emprestimo` | `id`, `dataEmprestimo`, `dataDevolucao` | 1 livro (`Livro`), 1 leitor (`Leitor`)       |
 
-```json
-{
-  "nome": "João da Silva",
-  "email": "joao@email.com"
-}
-```
+---
 
-- **Resposta esperada:**
+### 🔄 Interações Entre as Classes
 
-```json
-{
-  "id": 1,
-  "nome": "João da Silva",
-  "email": "joao@email.com"
-}
-```
-
-
-
-## ✅ Parte 3   - Análise e Design
-
-## ✅ Questão 1: Projeto de Sistema (Gestão de Biblioteca)
-📋 Enunciado Resumido
-Você está projetando um sistema de gestão de biblioteca.
-O sistema deve permitir:
-
-Cadastro de livros
-
-Cadastro de autores
-
-Cadastro de leitores
-
-Controle de empréstimo e devolução de livros
-
-Desenhe um diagrama de classes para este sistema e explique como as classes interagem entre si.
-
-🖼️ Diagrama UML
-🔗 Visualize o diagrama de classes completo aqui:
-
-http://app2.cdxsistemas.com.br/Diagrama_UML_Biblioteca.png
-
-🧱 Classes Principais
-
-Classe	Atributos principais	Relacionamentos
-
-Livro	id, titulo, isbn, anoPublicacao	1 autor (Autor), N empréstimos (Emprestimo)
-Autor	id, nome, nacionalidade	1 autor → N livros (Livro)
-Leitor	id, nome, cpf, email	N empréstimos (Emprestimo)
-Emprestimo	id, dataEmprestimo, dataDevolucao	1 livro (Livro), 1 leitor (Leitor)
-
-🔄 Interações Entre as Classes
-
-Um autor pode escrever vários livros
-
-Um livro pertence a apenas um autor
-
-Um leitor pode realizar vários empréstimos
-
-Cada empréstimo vincula um livro a um leitor, com controle de datas
-
-O sistema registra histórico de empréstimos, garantindo que um livro só seja emprestado uma vez por vez
+- Um **autor** pode escrever vários **livros**
+- Um **livro** pertence a apenas um **autor**
+- Um **leitor** pode realizar vários **empréstimos**
+- Cada **empréstimo** vincula um **livro** a um **leitor**, com controle de datas
+- O sistema registra histórico de empréstimos, garantindo que um livro só seja emprestado uma vez por vez  
