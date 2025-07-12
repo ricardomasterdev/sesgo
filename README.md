@@ -1,4 +1,4 @@
-# 💻 Projeto Java Algoritmos — SEDES
+# 💻 Projeto Java Algoritmos — SES
 
 Repositório público para estudo e implementação de exercícios de algoritmos em **Java** com uso de **JUnit**, **Spring Boot** e conceitos modernos de estruturação de código.
 
