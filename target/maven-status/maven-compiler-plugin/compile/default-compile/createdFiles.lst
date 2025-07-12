@@ -1,2 +1,11 @@
-com\ricardomasterdev\cache\CacheLRU$1.class
+com\ricardomasterdev\api\controller\UserController.class
+com\ricardomasterdev\api\entity\User.class
+com\ricardomasterdev\banco\SimulacaoTransferencias.class
+com\ricardomasterdev\api\service\UserService.class
+com\ricardomasterdev\banco\Conta.class
 com\ricardomasterdev\cache\CacheLRU.class
+com\ricardomasterdev\api\JavaAlgoritmoApplication.class
+com\ricardomasterdev\api\repository\UserRepository.class
+com\ricardomasterdev\arquivos\RemoverLinhasEmBranco.class
+com\ricardomasterdev\cache\CacheLRU$1.class
+com\ricardomasterdev\banco\Banco.class
