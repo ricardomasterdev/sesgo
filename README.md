@@ -31,8 +31,8 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 
 | Caminho | Descrição |
 |--------|-----------|
-| `src/main/java/com/exemplo/cache/CacheLRU.java` | Classe da cache com política LRU |
-| `src/test/java/com/exemplo/cache/CacheLRUTest.java` | Testes unitários com JUnit para validar a funcionalidade da cache |
+| `src/main/java/com/ricardomasterdev/cache/CacheLRU.java` | Classe da cache com política LRU |
+| `src/test/java/com/ricardomasterdev/cache/CacheLRUTest.java` | Testes unitários com JUnit para validar a funcionalidade da cache |
 
 ---
 
@@ -41,7 +41,7 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 1. Abra o projeto no **IntelliJ IDEA 2022.2.5**
 2. Verifique se o SDK está definido como **Java 1.8**
 3. Abra o arquivo de teste:
-   src/test/java/com/exemplo/cache/CacheLRUTest.java
+   src/test/java/com/ricardomasterdev/cache/CacheLRUTest.java
 4. Clique com o botão direito na classe e selecione:
    Run 'CacheLRUTest'
 5. Os testes JUnit serão executados e os resultados aparecerão no painel inferior do IntelliJ.
@@ -56,4 +56,3 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 ---
 
 ## 📌 Próximos Exercícios
-

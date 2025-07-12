@@ -1,4 +1,4 @@
-package cache;
+package com.ricardomasterdev.cache;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
