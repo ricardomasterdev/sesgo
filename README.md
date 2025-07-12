@@ -41,9 +41,9 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 1. Abra o projeto no **IntelliJ IDEA 2022.2.5**
 2. Verifique se o SDK está definido como **Java 1.8**
 3. Abra o arquivo de teste:
-   src/test/java/com/ricardomasterdev/cache/CacheLRUTest.java
+   `src/test/java/com/ricardomasterdev/cache/CacheLRUTest.java`
 4. Clique com o botão direito na classe e selecione:
-   Run 'CacheLRUTest'
+   `Run 'CacheLRUTest'`
 5. Os testes JUnit serão executados e os resultados aparecerão no painel inferior do IntelliJ.
 
 ✅ Todos os testes devem passar, validando os métodos:
@@ -56,138 +56,169 @@ Repositório público para estudo e implementação de exercícios de algoritmos
 ---
 
 ## ✅ Questão 2 — Manipulação de Arquivos
-📋 Enunciado Resumido
-Ler um arquivo texto chamado input.txt, remover todas as linhas em branco,
-e gravar o conteúdo restante em um novo arquivo chamado output.txt.
 
-🗂️ Estrutura de Pastas
-Caminho	Descrição
-src/main/java/com/ricardomasterdev/arquivos/RemoverLinhasEmBranco.java	Classe principal que executa a leitura, filtragem e escrita dos arquivos
-src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java	Classe auxiliar para execução manual do processamento
+### 📋 Enunciado Resumido
 
-▶️ Como Executar o Exercício
-Crie um arquivo chamado input.txt na raiz do projeto (mesmo nível do pom.xml)
+> Ler um arquivo texto chamado `input.txt`, remover todas as linhas em branco,  
+> e gravar o conteúdo restante em um novo arquivo chamado `output.txt`.
 
-Insira conteúdo de teste com algumas linhas em branco, por exemplo:
+---
+
+### 🗂️ Estrutura de Pastas
+
+| Caminho | Descrição |
+|--------|-----------|
+| `src/main/java/com/ricardomasterdev/arquivos/RemoverLinhasEmBranco.java` | Classe principal que executa a leitura, filtragem e escrita dos arquivos |
+| `src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java` | Classe auxiliar para execução manual do processamento |
+
+---
+
+### ▶️ Como Executar o Exercício
+
+1. Crie um arquivo chamado `input.txt` na raiz do projeto (mesmo nível do `pom.xml`)
+2. Insira conteúdo de teste com algumas linhas em branco, por exemplo:
+
+```
 Linha 1
 
 Linha 2
 
 Linha 3
+```
 
-Abra e execute a classe:
+3. Execute a classe:
+   `src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java`
 
-src/main/test/java/com/ricardomasterdev/arquivos/TestRemoverLinhas.java
-O programa irá gerar um novo arquivo output.txt na mesma pasta, contendo apenas as linhas com texto.
+✅ O programa irá gerar um novo arquivo `output.txt` na mesma pasta, contendo apenas as linhas com texto.  
+✅ Todas as linhas em branco ou com espaços em branco são removidas automaticamente.  
+✅ O processo é feito utilizando `Streams`, `Files.readAllLines()` e `Files.write()` da biblioteca `java.nio.file`.
 
-✅ Todas as linhas em branco ou com espaços em branco são removidas automaticamente.
-O processo é feito utilizando Streams, Files.readAllLines() e Files.write() da biblioteca java.nio.file.
-
-
+---
 
 ## ✅ Questão 3 — Multithreading: Simulação Bancária
-📋 Enunciado Resumido
-Implemente um programa que simule um banco com múltiplas contas e suporte
-transferências simultâneas entre contas. O sistema deve lidar corretamente com concorrência,
-evitando condições de corrida e garantindo a consistência dos saldos ao final da execução.
 
-🗂️ Estrutura de Pastas
-Caminho	Descrição
-src/main/java/com/ricardomasterdev/banco/Conta.java	Representa uma conta bancária com saldo e operações sincronizadas
-src/main/java/com/ricardomasterdev/banco/Banco.java	Contém a lógica central de transferência entre contas
-src/main/java/com/ricardomasterdev/banco/SimulacaoTransferencias.java	Simula múltiplas transferências paralelas entre contas usando ExecutorService
-src/main/test/java/com/ricardomasterdev/banco/TestBanco.java	Classe auxiliar para executar manualmente a simulação
+### 📋 Enunciado Resumido
 
-▶️ Como Executar o Exercício
-Abra o projeto no IntelliJ IDEA 2022.2.5
+> Implemente um programa que simule um banco com múltiplas contas e suporte  
+> transferências simultâneas entre contas. O sistema deve lidar corretamente com concorrência,  
+> evitando condições de corrida e garantindo a consistência dos saldos ao final da execução.
 
-Verifique se o SDK está definido como OpenJDK 24 ou compatível com Java 8+
+---
 
-Localize a classe:
+### 🗂️ Estrutura de Pastas
 
-src/main/tesat/java/com/ricardomasterdev/banco/TestBanco.java
-Execute a classe com o botão direito → Run 'TestBanco'
+| Caminho | Descrição |
+|--------|-----------|
+| `src/main/java/com/ricardomasterdev/banco/Conta.java` | Representa uma conta bancária com saldo e operações sincronizadas |
+| `src/main/java/com/ricardomasterdev/banco/Banco.java` | Contém a lógica central de transferência entre contas |
+| `src/main/java/com/ricardomasterdev/banco/SimulacaoTransferencias.java` | Simula múltiplas transferências paralelas entre contas usando `ExecutorService` |
+| `src/main/test/java/com/ricardomasterdev/banco/TestBanco.java` | Classe auxiliar para executar manualmente a simulação |
 
-✅ A simulação irá executar 100 transferências concorrentes de ida e volta entre duas contas bancárias.
-✅ O sistema utiliza ExecutorService e synchronized para garantir integridade dos saldos.
+---
 
-🧪 Funcionamento Esperado
-As contas começam com saldo igual (1000.00 cada)
+### ▶️ Como Executar o Exercício
 
-O programa executa transferências concorrentes entre elas
+1. Abra o projeto no IntelliJ IDEA 2022.2.5
+2. Verifique se o SDK está definido como **OpenJDK 24** ou compatível com Java 8+
+3. Execute a classe:
+   `src/main/test/java/com/ricardomasterdev/banco/TestBanco.java`
 
-Ao final, os saldos devem permanecer consistentes (1000.00 cada), provando que não houve condição de corrida
+✅ A simulação irá executar 100 transferências concorrentes de ida e volta entre duas contas bancárias.  
+✅ O sistema utiliza `ExecutorService` e `synchronized` para garantir integridade dos saldos.
+
+---
+
+### 🧪 Funcionamento Esperado
+
+- As contas começam com saldo igual (`1000.00` cada)
+- O programa executa transferências concorrentes entre elas
+- Ao final, os saldos devem permanecer consistentes (`1000.00` cada), provando que não houve condição de corrida
 
 Exemplo de saída esperada:
 
-✔ Transferido 10.00 de Conta 1 para Conta 2
-✔ Transferido 10.00 de Conta 2 para Conta 1
-...
-✅ Saldo final Conta 1: 1000.00
+```
+✔ Transferido 10.00 de Conta 1 para Conta 2  
+✔ Transferido 10.00 de Conta 2 para Conta 1  
+...  
+✅ Saldo final Conta 1: 1000.00  
 ✅ Saldo final Conta 2: 1000.00
+```
 
+---
 
 ## ✅ Questão 4 — API REST com Spring Boot + Oracle + Swagger
-📋 Enunciado Resumido
-Desenvolver uma API RESTful utilizando Spring Boot que permita o gerenciamento de usuários com os seguintes endpoints:
 
-Criar um novo usuário (POST /users)
+### 📋 Enunciado Resumido
 
-Listar todos os usuários (GET /users)
+> Desenvolver uma API RESTful utilizando Spring Boot que permita o gerenciamento de usuários com os seguintes endpoints:
+>
+> - Criar um novo usuário (`POST /users`)
+> - Listar todos os usuários (`GET /users`)
+> - Buscar um usuário por ID (`GET /users/{id}`)
+> - Atualizar um usuário existente (`PUT /users/{id}`)
+> - Deletar um usuário (`DELETE /users/{id}`)
 
-Buscar um usuário por ID (GET /users/{id})
+---
 
-Atualizar um usuário existente (PUT /users/{id})
+### 🌐 Publicação
 
-Deletar um usuário (DELETE /users/{id})
-
-🌐 Publicação
 A API foi publicada no seguinte endereço:
 
-API Endpoint: http://app2.cdxsistemas.com.br:1111/users
-
-Swagger UI: http://app2.cdxsistemas.com.br:1111/swagger-ui/index.html
+- **API Endpoint:** [`http://app2.cdxsistemas.com.br:1111/users`](http://app2.cdxsistemas.com.br:1111/users)
+- **Swagger UI:** [`http://app2.cdxsistemas.com.br:1111/swagger-ui/index.html`](http://app2.cdxsistemas.com.br:1111/swagger-ui/index.html)
 
 Através da interface Swagger, é possível testar todos os endpoints diretamente pelo navegador.
 
-🗂️ Estrutura de Pastas
-Caminho	Descrição
-src/main/java/com/ricardomasterdev/api/entity/User.java	Entidade JPA que representa um usuário
-src/main/java/com/ricardomasterdev/api/repository/UserRepository.java	Interface do repositório Spring Data JPA
-src/main/java/com/ricardomasterdev/api/service/UserService.java	Classe de serviço com a lógica de CRUD
-src/main/java/com/ricardomasterdev/api/controller/UserController.java	Controller REST com os endpoints da API
-src/main/resources/application.properties	Configuração da conexão com o banco Oracle
+---
 
-⚙️ Banco de Dados Utilizado
-A aplicação utiliza um banco Oracle remoto com as seguintes configurações (exemplo funcional incluído no application.properties):
+### 🗂️ Estrutura de Pastas
 
-# Configuração do banco Oracle
+| Caminho | Descrição |
+|--------|-----------|
+| `src/main/java/com/ricardomasterdev/api/entity/User.java` | Entidade JPA que representa um usuário |
+| `src/main/java/com/ricardomasterdev/api/repository/UserRepository.java` | Interface do repositório Spring Data JPA |
+| `src/main/java/com/ricardomasterdev/api/service/UserService.java` | Classe de serviço com a lógica de CRUD |
+| `src/main/java/com/ricardomasterdev/api/controller/UserController.java` | Controller REST com os endpoints da API |
+| `src/main/resources/application.properties` | Configuração da conexão com o banco Oracle |
+
+---
+
+### ⚙️ Banco de Dados Utilizado
+
+A aplicação utiliza um banco **Oracle** remoto com as seguintes configurações:
+
+```properties
 spring.datasource.url=jdbc:oracle:thin:@//177.53.148.181:1522/XEPDB1
 spring.datasource.username=codex
 spring.datasource.password=Ric7901
 spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
-# JPA / Hibernate
 spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-Essas credenciais permitem validar a efetividade da API, incluindo persistência e consulta no banco Oracle real.
+```
 
-📌 Exemplo de uso via Swagger
-Criar um usuário:
+✅ Essas credenciais permitem validar a efetividade da API, incluindo persistência e consulta no banco Oracle real.
 
-json
-Copy
-Edit
+---
+
+### 📌 Exemplo de uso via Swagger
+
+- **Criar um usuário:**
+
+```json
 {
-"nome": "João da Silva",
-"email": "joao@email.com"
+  "nome": "João da Silva",
+  "email": "joao@email.com"
 }
-Resposta esperada:
+```
 
+- **Resposta esperada:**
+
+```json
 {
-"id": 1,
-"nome": "João da Silva",
-"email": "joao@email.com"
+  "id": 1,
+  "nome": "João da Silva",
+  "email": "joao@email.com"
 }
-
+```
